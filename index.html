@@ -1,18 +1,165 @@
-<!DOCTYPE html>
-<html>
-
+<<!DOCTYPE html>
+<html lang="zh-TW">
 <head>
 <meta charset="UTF-8">
-<title>JJ鮮魚｜汐鮨</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>黃小婷｜設計作品集</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:"Microsoft JhengHei";
+}
+
+body{
+background:#f7f8fa;
+color:#333;
+}
+
+header{
+background:#23237d;
+color:white;
+padding:80px 20px;
+text-align:center;
+}
+
+header h1{
+font-size:60px;
+margin-bottom:15px;
+}
+
+header p{
+font-size:22px;
+}
+
+.btn{
+display:inline-block;
+margin-top:30px;
+padding:15px 40px;
+background:white;
+color:#23237d;
+border-radius:50px;
+text-decoration:none;
+font-weight:bold;
+}
+
+section{
+max-width:1200px;
+margin:auto;
+padding:80px 20px;
+}
+
+h2{
+color:#23237d;
+margin-bottom:30px;
+font-size:40px;
+}
+
+.about p{
+font-size:20px;
+line-height:1.8;
+}
+
+.portfolio{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:25px;
+}
+
+.card{
+background:white;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.card img{
+width:100%;
+height:250px;
+object-fit:cover;
+}
+
+.card h3{
+padding:20px;
+}
+
+footer{
+background:#23237d;
+color:white;
+text-align:center;
+padding:40px;
+}
+
+@media(max-width:768px){
+
+header h1{
+font-size:40px;
+}
+
+.portfolio{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
 </head>
 
 <body>
 
-<h1>JJ鮮魚</h1>
-<h2>新鮮・盡在汐鮨</h2>
+<header>
+<h1>黃小婷</h1>
+<p>平面設計｜品牌設計｜視覺傳達</p>
 
-<p>我的第一個網站完成了！</p>
+<a href="#portfolio" class="btn">
+查看作品
+</a>
+</header>
+
+<section class="about">
+<h2>關於我</h2>
+
+<p>
+目前就讀二信高中廣告設計科，
+熱愛平面設計與品牌視覺設計，
+希望未來進入台灣科技大學設計系持續學習與創作。
+</p>
+</section>
+
+<section id="portfolio">
+
+<h2>作品集</h2>
+
+<div class="portfolio">
+
+<div class="card">
+<img src="https://picsum.photos/600/400?1">
+<h3>海報設計</h3>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/600/400?2">
+<h3>品牌設計</h3>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/600/400?3">
+<h3>插畫創作</h3>
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+黃小婷 Design Portfolio
+
+</footer>
 
 </body>
-
 </html>
