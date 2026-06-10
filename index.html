@@ -1,4 +1,4 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-TW">
 <head>
 <meta charset="UTF-8">
@@ -37,6 +37,22 @@ font-size:22px;
 }
 
 .btn{
+    display:inline-block;
+    margin-top:30px;
+    padding:15px 40px;
+    background:white;
+    color:#23237d;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-5px);
+    box-shadow:0 10px 20px rgba(0,0,0,.2);
+} 
+{
 display:inline-block;
 margin-top:30px;
 padding:15px 40px;
@@ -105,60 +121,55 @@ grid-template-columns:1fr;
 }
 
 }
-.fade-in{
-    opacity:0;
-    transform:translateY(50px);
-    transition:all 1s ease;
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(50px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
 }
 
-.fade-in.show{
-    opacity:1;
-    transform:translateY(0);
+header h1,
+header p,
+.btn{
+    animation:fadeUp 1s ease forwards;
 }
+
+header p{
+    animation-delay:.3s;
+}
+
+.btn{
+    animation-delay:.6s;
+}
+
 </style>
 </head>
 
 <body>
-<script>
-
-const observer = new IntersectionObserver(entries => {
-
-    entries.forEach(entry => {
-
-        if(entry.isIntersecting){
-            entry.target.classList.add("show");
-        }
-
-    });
-
-});
-
-document.querySelectorAll(".fade-in").forEach(el => {
-    observer.observe(el);
-});
-
-</script>
 
 <header>
 <h1>汐鮨｜JJ鮮魚</h1>
-<p>新鮮｜汐止｜生魚片</p>
+<p>汐止｜新鮮｜生魚片</p>
 
 <a href="#portfolio" class="btn">
-查看相關資訊
+查看更多資訊
 </a>
 </header>
 
-<section class="about fade-in">
+<section class="about">
 <h2>關於我們</h2>
 
 <p>
 來自宜蘭沿岸當季捕撈，產地直送
 確保海鮮最新鮮的原味
-嚴選漁港現撈魚貨
-</p>
+嚴選漁港現撈魚貨</p>
 </section>
 
-<section id="portfolio" class="fade-in">
+<section id="portfolio">
 
 <h2>本日鮮食</h2>
 
@@ -175,13 +186,23 @@ document.querySelectorAll(".fade-in").forEach(el => {
 </div>
 
 <div class="card">
-<img src="https://picsum.photos/600/400?2">
+<img src="https://picsum.photos/600/400?3">
 <h3>干貝</h3>
+
+</div>
+<div class="card">
+<img src="https://picsum.photos/600/400?1">
+<h3>鮭魚飯糰</h3>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/600/400?2">
+<h3>鮪魚飯糰</h3>
 </div>
 
 <div class="card">
 <img src="https://picsum.photos/600/400?3">
-<h3>飯團</h3>
+<h3>其他</h3>
 </div>
 
 </div>
@@ -189,9 +210,12 @@ document.querySelectorAll(".fade-in").forEach(el => {
 </section>
 
 <footer>
+
 地點：新北市汐止區林森市場A02攤位
-營業時間：週五、六、日 8:00-13:00
-老闆電話：0918-397-427
+ 營業時間：週五、六、日 8:00-13:00
+ 老闆電話：0918-397-427
+ Design Portfolio
+
 </footer>
 
 </body>
