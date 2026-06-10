@@ -105,11 +105,39 @@ grid-template-columns:1fr;
 }
 
 }
+.fade-in{
+    opacity:0;
+    transform:translateY(50px);
+    transition:all 1s ease;
+}
 
+.fade-in.show{
+    opacity:1;
+    transform:translateY(0);
+}
 </style>
 </head>
 
 <body>
+<script>
+
+const observer = new IntersectionObserver(entries => {
+
+    entries.forEach(entry => {
+
+        if(entry.isIntersecting){
+            entry.target.classList.add("show");
+        }
+
+    });
+
+});
+
+document.querySelectorAll(".fade-in").forEach(el => {
+    observer.observe(el);
+});
+
+</script>
 
 <header>
 <h1>汐鮨｜JJ鮮魚</h1>
@@ -120,7 +148,7 @@ grid-template-columns:1fr;
 </a>
 </header>
 
-<section class="about">
+<section class="about fade-in">
 <h2>關於我們</h2>
 
 <p>
@@ -130,7 +158,7 @@ grid-template-columns:1fr;
 </p>
 </section>
 
-<section id="portfolio">
+<section id="portfolio" class="fade-in">
 
 <h2>本日鮮食</h2>
 
