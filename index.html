@@ -19,7 +19,19 @@ body{
 background:White;
 color:#00001F;
 }
+<div class="menu-container">
 
+<button class="menu-btn" onclick="toggleMenu()">
+☰
+</button>
+
+<div class="menu" id="menu">
+<a href="#about">關於我們</a>
+<a href="#portfolio">本日鮮食</a>
+<a href="#contact">聯絡資訊</a>
+</div>
+
+</div>
 header{
 background:#00001F;
 color:white;
@@ -161,7 +173,7 @@ header p{
 </header>
 
 <section class="about">
-<h2>關於我們</h2>
+<h2><section class="about" id="about"></h2>
 
 <p>
 源自宜蘭沿岸純淨海域的優質海鮮，秉持新鮮至上的理念，嚴選在地漁港每日現撈魚貨。依循季節漁汛，當季捕撈、產地直送，讓每一份海鮮都保留最鮮甜的海洋原味與豐富營養。從漁船靠岸到送達餐桌，全程嚴格把關品質，減少不必要的運輸與等待時間，只為呈現最真實、最鮮美的海味。以誠信經營為原則，讓消費者吃得安心、買得放心，將宜蘭海岸最純粹的新鮮滋味分享給每一位顧客。</p>
@@ -206,8 +218,48 @@ header p{
 </div>
 
 </section>
+    .menu-container{
+    position:fixed;
+    top:20px;
+    left:20px;
+    z-index:999;
+}
 
-<footer>
+.menu-btn{
+    background:#00001F;
+    color:white;
+    border:none;
+    font-size:28px;
+    padding:10px 15px;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+.menu-btn:hover{
+    background:#1a1a4d;
+}
+
+.menu{
+    display:none;
+    margin-top:10px;
+    background:white;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,.2);
+    overflow:hidden;
+}
+
+.menu a{
+    display:block;
+    padding:15px 30px;
+    color:#00001F;
+    text-decoration:none;
+}
+
+.menu a:hover{
+    background:#f0f0f0;
+}
+
+<<footer id="contact">>
 
 地點：新北市汐止區林森市場A02攤位
   營業時間：週五、六、日 8:00-13:00
@@ -215,5 +267,20 @@ header p{
 
 </footer>
 
+<script>
+
+function toggleMenu(){
+
+    var menu = document.getElementById("menu");
+
+    if(menu.style.display === "block"){
+        menu.style.display = "none";
+    }else{
+        menu.style.display = "block";
+    }
+
+}
+
+</script>
 </body>
 </html>
